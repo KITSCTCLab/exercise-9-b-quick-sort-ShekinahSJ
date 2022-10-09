@@ -2,6 +2,15 @@ from typing import List
 
 def quick_sort(data, low, high) -> List[int]:
     # Write code here
+    i=low-1
+    pivot = data[high]
+    for j in range(low,high):
+        if data[j] <= pivot:
+            i+=1
+            data[i],data[j] = data[j],data[i]
+    data[i+1],data[high] = data[high],data[i+1]
+    return i+1
+
 
 
 input_data = input()
